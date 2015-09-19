@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Using Indexed DB</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/admin.js"></script>
+    <style>
+    body{
+            background:#22b2aa repeat;
+        }
+</style>
+</head>
+<body>
+    <section id="header">
+        <div class="container">
+            <div class="row"> 
+                <nav id="menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="EnteringInfo.html">Student's Corner</a>
+                         <ul>
+                            <li><a href="EnteringInfo.html">New Student</a></li>
+                            <li><a href="EnteringInfo.html">Existing Student</a></li>
+                            
+                         </ul>
+                        </li>
+                        <li><a href="gurdian.html">Gurdian's Corner</a>
+                        <ul>
+                            <li><a href="gurdian.html">New Gurdian</a></li>
+                            <li><a href="gurdian.html">Student Information</a></li>
+                            
+                        </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="signup.html">Admin</a></li>
+                    </ul>
+                </nav>               
+                
+            </div>
+        </div>
+    </section>
+    <section id="studentInfo">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+
+                    <div id="editContact">
+                        <h2 id="currentAction"></h2>
+                        <div>
+                            <label for="txtFirstName">Student ID: </label>
+                            <input type="text" id="txtID" name="firstName" />
+                        </div>
+                        <div>
+                            <label for="txtLastName">Student Name: </label>
+                            <input type="text" id="txtName" name="lastName" />
+                        </div>
+                        <div>
+                            <label for="txtEmail">Student Roll Number: </label>
+                            <input type="number" id="rollNumber" name="email" />
+                        </div>
+                        <div>
+                            <label for="txtPhoneNumber">Student Class: </label>
+                            <input type="text" id="stdClass" name="phoneNumber" />
+                        </div>
+                        <div>
+                            <label for="txtPhoneNumber">Student Section: </label>
+                            <select name="Section" id="stdSection">
+                                <option value="1">A</option>
+                                <option value="2">B</option>
+                                <option value="3">C</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="txtPhoneNumber">Gurdian Name: </label>
+                            <input type="text" id="gurdian" name="gurdian" />
+                        </div>
+                        <div>
+                            <label for="txtPhoneNumber">Relation With Student: </label>
+                            <select name="Relation" id="stdRelation" class="glyphicon glyphicon-chevron-down">
+                                <option value="1">Father</option>
+                                <option value="2">Mother</option>
+                                <option value="3">Sister</option>
+                                <option value="4">Brother</option>
+                                <option value="5">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="Gender">Gender: </label>
+                            <input type="radio" value="Male" id="radio1" name="radioName"/>Male
+                            <input type="radio" value="Female" id="radio2" name="radioName" />Female
+                       </div>
+                        <div class="buttons">
+                            <button id="btnsave" class="btn btn-primary btn-md" name="save">Save</button>
+                        </div>
+                    </div>
+                   </div>
+                   <div class="col-md-6">                 
+                        <div class="media">
+                       <div class="media-body nhead">
+                            <h4 class="media-heading">Student Notice Board:</h4>                           
+                        </div>
+                    </div>
+                    <div class="media notice">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object" src="images/std.png" alt="">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Media heading</h4>
+                            <p>
+                                Ipsum gravida vel pretium tellus tincidunt integer eu augue augue nunc elit dolor,
+                                luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut.
+                            </p>
+                        </div>
+                    </div>
+                   </div>
+                   
+                </div>
+                
+
+            </div>
+      
+
+    </section>
+
+    <section id="info">
+         <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                        <header>
+                            <hgroup id="headerText">
+                                <h1>Student Information</h1>
+                            </hgroup>
+                        </header>
+                        <div role="main">
+                            <table id="contacts" class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Student ID</th>
+                                        <th>Student Name</th>
+                                        <th>Student Roll</th>
+                                        <th>Student Class</th>
+                                        <th>Student Section</th>
+                                        <th>Gurdian</th>
+                                        <th>Relation</th>
+                                        <th>Gender</th>
+                
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                   </div>
+                   </div>
+    </section>
+   
+    <section id="enterInfo">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="media">
+                       <div class="media-body nhead">
+                            <h4 class="media-heading">Notice Board:</h4>                            
+                        </div>
+                    </div>
+                    <div class="media notice">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object" src="images/std.png" alt="">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Media heading</h4>
+                            <p>
+                                Ipsum gravida vel pretium tellus tincidunt integer eu augue augue nunc elit dolor,
+                                luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div id="editContact">
+                        <h2 id="currentAction"></h2>
+                        <div>
+                            <label for="GurdianName">Gurdian Name: </label>
+                            <input type="text" id="gName" name="firstNameg" />
+                        </div>
+                        <div>
+                            <label for="GurdianAddress">Gurdian Address: </label>
+                            <textarea id="gAddress"></textarea>
+                        </div>
+                        <div>
+                            <label for="gurdianEmail">Gurdian Email </label>
+                            <input type="email" id="gEmail" name="emailg" />
+                        </div>
+                        <div>
+                            <label for="gMobileN">Gurdian Mobile</label>
+                            <input type="number" id="gMobile" name="mobile" />
+                        </div>
+
+                        <div>
+                            <label for="Rel">Relation With Student: </label>
+                            <select name="gREl" id="stdRel">
+                                <option value="1">Son</option>
+                                <option value="2">Daughter</option>
+                                <option value="3">Sister</option>
+                                <option value="4">Brother</option>
+                                <option value="5">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="Gender">Gender: </label>
+                            <input type="radio" value="Male" id="radio1" name="radioName" />
+                            <label for="Male">Male</label>
+                            <input type="radio" value="Female" id="radio2" name="radioName" />
+                            <label for="Female">Female</label>
+                            <!--<select name="Gender" id="gender">
+                                <option value="i am">I am....</option>
+                                <option value="i am">Male</option>
+                                <option value="i am">Female</option>
+                            </select>-->
+                        </div>
+                        <div class="buttons">
+                            <button id="gSave" class="btn btn-primary btn-md" name="saveg">Save</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <section id="gInfo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <header>
+                        <hgroup id="headerText">
+                            <h1>Gurdian Information</h1>
+                        </hgroup>
+                    </header>
+                    <div role="main">
+                        <table id="con" class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Gurdian Name</th>
+                                    <th>Gurdian Address</th>
+                                    <th>Gurdian Email</th>
+                                    <th>Gurdian Mobile</th>
+                                    <th>Relation with Student</th>
+                                    <th>Gender</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     
+</body>
+</html>

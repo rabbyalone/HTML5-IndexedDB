@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Using Indexed DB</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+    $(function () {
+
+    $('form').submit(function (e) {
+
+        var userName = $('#user').val(),
+            pass = $('#pass').val();
+        if (userName == 'admin' && pass == "admin") {
+            $(this).submit();
+        }
+        else {
+            e.preventDefault();
+            $('#message').text('Please enter Valid UserName & password');
+        }
+
+
+    });
+
+});
+</script>
+    <style>
+        body {
+            background: url("images/bg3.jpg") no-repeat top center, #9B65D1 repeat;
+            height: 100%;
+            background-size: cover;
+            -moz-background-size:cover;
+            -webkit-background-size:cover;
+        }
+        #user, #pass {
+            margin-bottom:10px;
+
+        }
+        label{
+            padding: 9px
+        }
+        input[type='submit']{
+            margin-left: 17em;
+        }
+        input[type='submit']:hover{
+            background: rgba(255,255,255,0.6);
+            color: #000 !important;
+        }
+        span{
+            border:1px solid red;
+            font-size: 16px;
+        }
+    </style>
+
+
+
+</head>
+<body>
+
+    <section id="header" class="homewrapper">
+        <div class="container">
+            <div class="row">
+                <nav id="menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li>
+                            <a href="EnteringInfo.html">Student's Corner</a>
+                            <ul>
+                                <li><a href="EnteringInfo.html">New Student</a></li>
+                                <li><a href="EnteringInfo.html">Existing Student</a></li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="gurdian.html">Gurdian's Corner</a>
+                            <ul>
+                                <li><a href="gurdian.html">New Gurdian</a></li>
+                                <li><a href="gurdian.html">Student Information</a></li>
+
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="signup.html">Admin</a></li>
+                    </ul>
+                </nav>
+                <div class="col-md-12 wrapper">
+                    <form method="GET" action="admin.html">
+                        <label for="username">Username: </label>
+                        <input type="text" placeholder="Enter Your UserName" id="user" required/><br>
+                        <label for="pass">Password</label>
+                        <input type="password" placeholder="Enter Password Here" id="pass" required/>
+                        <input type="submit" value="Sign In" />
+                    </form>
+                    <span id="message"></span>
+                    <p>Demo UserName: admin<br>Demo PassWord: admin</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
