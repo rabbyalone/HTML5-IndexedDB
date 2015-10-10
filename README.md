@@ -2,4 +2,4 @@
 Browser Database Indexed DB based Student Information Apps
 # Demo
 ###
-http://rabby.xyz.com/Project_One
+http://rabby.xyz/Project_One
